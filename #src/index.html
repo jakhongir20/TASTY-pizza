@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/jpeg" href="img/favicon.png">
+  <title>Teysti</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Vollkorn:ital,wght@1,400;1,500;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/libs/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/libs/animate.css">
+  <link rel="stylesheet" href="css/libs/jquery.nice-number.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+
+<body>
+  <div class="wrapper">
+    @@include('_header.html')
+    <main class="page">
+      <section class="mainslider">
+        <div class="mainslider__body swiper-container">
+          <div class="swiper-wrapper">
+            <div class="mainslider__slide swiper-slide">
+              <div class="mainslider__image _ibg">
+                <img src="img/mainslider/01.png" alt="">
+              </div>
+            </div>
+            <div class="mainslider__slide swiper-slide">
+              <div class="mainslider__image _ibg">
+                <img src="img/mainslider/01.png" alt="">
+              </div>
+            </div>
+            <div class="mainslider__slide swiper-slide">
+              <div class="mainslider__image _ibg">
+                <img src="img/mainslider/01.png" alt="">
+              </div>
+            </div>
+            <div class="mainslider__slide swiper-slide">
+              <div class="mainslider__image _ibg">
+                <img src="img/mainslider/01.png" alt="">
+              </div>
+            </div>
+            <div class="mainslider__slide swiper-slide">
+              <div class="mainslider__image _ibg">
+                <img src="img/mainslider/01.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+      <section class="pizza" id="pizza">
+        <div class="product__container _container">
+          <h2 class="product__title _title">Пицца</h2>
+          <div class="product__row" id="pizzas"></div>
+        </div>
+      </section>
+      <section class="adv">
+        <div class="adv__image _ibg">
+          <img src="img/adv/01.jpg" alt="">
+        </div>
+      </section>
+      <section class="coffe" id="coffe">
+        <div class="product__container _container">
+          <h2 class="product__title _title">Кофе</h2>
+          <div class="product__row" id="coffes">
+          
+          </div>
+        </div>
+      </section>
+      <section class="drink" id="drink">
+        <div class="product__container _container">
+          <h2 class="product__title _title">Прохладительные напитки</h2>
+          <div class="product__row" id="drinks"></div>
+        </div>
+      </section>
+      <section class="delivery" id="delivery">
+        <div class="delivery__container _container">
+          <div class="delivery__row">
+            <div class="delivery__column">
+              <h2 class="delivery__title _title">Доставка и оплата</h2>
+              <div class="delivery__body">
+                <div class="delivery__label">60 МИНУТ ИЛИ ПИЦЦА БЕСПЛАТНО</div>
+                <p class="delivery__text">Если мы не успеем доставить любые продукты, кроме сувенирной продукции и
+                  соусов, в течение 60 минут, курьер подарит вам сертификат на большую пиццу.</p>
+                <div class="delivery__label">38 000 СУМ</div>
+                <p class="delivery__text">Минимальная сумма доставки без учета товаров из категории «Другие товары»</p>
+                <div class="delivery__label">1 000 000 СУМ</div>
+                <p class="delivery__text">Максимальная сумма при оплате наличными</p>
+                <p class="delivery__info">*Изображения продуктов могут отличаться от продуктов в заказе.</p>
+              </div>
+            </div>
+            <div class="delivery__column">
+              <h2 class="delivery__title _title">Область доставки</h2>
+              <div class="delivery__strong">Область доставки ограничена</div>
+              <div class="delivery__map _ibg">
+                <img src="img/map.png" alt="Map">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- start tooltip -->
+      <div class="tooltip-overlay">
+        <div class="tooltip">
+          <div class="tooltip__text">добавил 1 товар</div>
+        </div>
+      </div>
+      <!-- end tooltip -->
+    </main>
+    @@include('_footer.html')
+
+    <div id="modal-branch" class="modal branch">
+      <div class="modal-body">
+        <div class="modal-header">
+          <div class="modal-header__content">
+            <div class="modal-title _title">Наши филиалы</div>
+            <button class="close-btn"><img src="img/del.svg" alt=""></button>
+          </div>
+        </div>
+        <div class="modal-branch__row">
+          <div class="modal-branch__body">
+            <div class="modal-branch__content">
+              <div class="modal-branch__image _ibg">
+                <img src="img/branch/01.png" alt="">
+              </div>
+              <div class="modal-branch-item">
+                <div class="modal-branch-item__title _title">Экопарк</div>
+                <div class="modal-branch-item__info">ул. Lorem Ipsum, п-р. Dolor Sit, д. 9, кв. 999</div>
+                <div class="modal-branch-item__phones">
+                  <a href="tel:998999999933" class="modal-branch-item__phone">(+998 99) 999 99 33</a> <br>
+                  <a href="tel:998999999999" class="modal-branch-item__phone">(+998 99) 999 99 99</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-branch__body">
+            <div class="modal-branch__content">
+              <div class="modal-branch__image _ibg">
+                <img src="img/branch/01.png" alt="">
+              </div>
+              <div class="modal-branch-item">
+                <div class="modal-branch-item__title _title">Экопарк</div>
+                <div class="modal-branch-item__info">ул. Lorem Ipsum, п-р. Dolor Sit, д. 9, кв. 999</div>
+                <div class="modal-branch-item__phones">
+                  <a href="tel:998999999933" class="modal-branch-item__phone">(+998 99) 999 99 33</a> <br>
+                  <a href="tel:998999999999" class="modal-branch-item__phone">(+998 99) 999 99 99</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-branch__body">
+            <div class="modal-branch__content">
+              <div class="modal-branch__image _ibg">
+                <img src="img/branch/01.png" alt="">
+              </div>
+              <div class="modal-branch-item">
+                <div class="modal-branch-item__title _title">Экопарк</div>
+                <div class="modal-branch-item__info">ул. Lorem Ipsum, п-р. Dolor Sit, д. 9, кв. 999</div>
+                <div class="modal-branch-item__phones">
+                  <a href="tel:998999999933" class="modal-branch-item__phone">(+998 99) 999 99 33</a> <br>
+                  <a href="tel:998999999999" class="modal-branch-item__phone">(+998 99) 999 99 99</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-branch__body">
+            <div class="modal-branch__content">
+              <div class="modal-branch__image _ibg">
+                <img src="img/branch/01.png" alt="">
+              </div>
+              <div class="modal-branch-item">
+                <div class="modal-branch-item__title _title">Экопарк</div>
+                <div class="modal-branch-item__info">ул. Lorem Ipsum, п-р. Dolor Sit, д. 9, кв. 999</div>
+                <div class="modal-branch-item__phones">
+                  <a href="tel:998999999933" class="modal-branch-item__phone">(+998 99) 999 99 33</a> <br>
+                  <a href="tel:998999999999" class="modal-branch-item__phone">(+998 99) 999 99 99</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="product-v-modal-overlay cart-modal">
+        <div class="product-v-modal-window">
+    
+          <div class="product-v-modal__header">
+            <div class="product-v-modal__title">Корзина</div>
+            <button type="button" class="product-v-modal-close">
+              <img data-close="true" src="img/del.svg" alt="">
+            </button>
+          </div>
+          <div id="show-cart" class="cart product-v-modal-body product-v-modal-cart">
+          </div>
+        </div>
+      </div>
+    <div id="modal-job" class="modal modal-job">
+      <div class="modal-body modal-body_job">
+        <div class="modal-header">
+          <div class="modal-header__content">
+            <div class="modal-title _title">Вакансии</div>
+            <button class="close-btn-job close-btn"><img src="img/del.svg" alt=""></button>
+          </div>
+        </div>
+        <div class="modal-job__body">
+          <div class="modal-job__row">
+            <div class="modal-job__column">
+              <div class="modal-job__item item-modal-job">
+                <div class="item-modal-job__label">Повар</div>
+                <div class="item-modal-job__content">
+                  <div class="item-modal-job__info">
+                    <p>Опыт работы:</p>
+                    <span>более 4-х лет</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                </div>
+                <button type="button" data-modal-job-btn class="item-modal-job__btn btn">Отправить анкету</button>
+              </div>
+            </div>
+            <div class="modal-job__column">
+              <div class="modal-job__item item-modal-job">
+                <div class="item-modal-job__label">Повар</div>
+                <div class="item-modal-job__content">
+                  <div class="item-modal-job__info">
+                    <p>Опыт работы:</p>
+                    <span>более 4-х лет</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                </div>
+                <button type="button" data-modal-job-btn class="item-modal-job__btn btn">Отправить анкету</button>
+              </div>
+            </div>
+            <div class="modal-job__column">
+              <div class="modal-job__item item-modal-job">
+                <div class="item-modal-job__label">Повар</div>
+                <div class="item-modal-job__content">
+                  <div class="item-modal-job__info">
+                    <p>Опыт работы:</p>
+                    <span>более 4-х лет</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                </div>
+                <button type="button" data-modal-job-btn class="item-modal-job__btn btn">Отправить анкету</button>
+              </div>
+            </div>
+            <div class="modal-job__column">
+              <div class="modal-job__item item-modal-job">
+                <div class="item-modal-job__label">Повар</div>
+                <div class="item-modal-job__content">
+                  <div class="item-modal-job__info">
+                    <p>Опыт работы:</p>
+                    <span>более 4-х лет</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                </div>
+                <button type="button" data-modal-job-btn class="item-modal-job__btn btn">Отправить анкету</button>
+              </div>
+            </div>
+            <div class="modal-job__column">
+              <div class="modal-job__item item-modal-job">
+                <div class="item-modal-job__label">Повар</div>
+                <div class="item-modal-job__content">
+                  <div class="item-modal-job__info">
+                    <p>Опыт работы:</p>
+                    <span>более 4-х лет</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                </div>
+                <button type="button" data-modal-job-btn class="item-modal-job__btn btn">Отправить анкету</button>
+              </div>
+            </div>
+            <div class="modal-job__column">
+              <div class="modal-job__item item-modal-job">
+                <div class="item-modal-job__label">Повар</div>
+                <div class="item-modal-job__content">
+                  <div class="item-modal-job__info">
+                    <p>Опыт работы:</p>
+                    <span>более 4-х лет</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                  <div class="item-modal-job__info">
+                    <p>Следующий пункт:</p>
+                    <span>Параметр</span>
+                  </div>
+                </div>
+                <button type="button" data-modal-job-btn class="item-modal-job__btn btn">Отправить анкету</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal for form -->
+    <div id="modal-form" class="modal modal-form">
+      <div class="modal-body modal-body_form">
+        <div class="modal-header">
+          <div class="modal-header__content">
+            <div class="modal-title _title">Анкета</div>
+            <button data-close-form class="close-btn-form close-btn"><img src="img/del.svg" alt=""></button>
+          </div>
+        </div>
+        <div class="modal-form__content">
+          <div class="modal-form__row">
+            <div class="modal-form__column">
+              <div class="modal-form__item">
+                <form>
+                  <div class="form__top">
+                    <div class="label-vacansy">Вакансия</div>
+                    <div class="select">
+                      <div class="select__header">
+                        <span class="select__current">Повар</span>
+                        <div class="select__icon"><img src="img/down.svg" alt=""></div>
+                      </div>
+                      <div class="select__body">
+                        <div class="select__item">Уборшик</div>
+                        <div class="select__item">Повар</div>
+                        <div class="select__item">Повар 2</div>
+                        <div class="select__item">Повар 3</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__main">
+                    <div class="form__group">
+                      <div class="_form">
+                        <input type="text" class="input" name="name" autocomplete="off" required>
+                        <label for="name" class="label-name"><span class="content-name">Имя</span></label>
+                      </div>
+                    </div>
+                    <div class="form__group">
+                      <div class="_form">
+                        <input type="text" class="input" name="lastName" autocomplete="off" required>
+                        <label for="lastName" class="label-name"><span class="content-name">Фамилия</span></label>
+                      </div>
+                    </div>
+                    <div class="form__group">
+                      <div class="_form">
+                        <input type="text" class="input" name="phone" autocomplete="off" required>
+                        <label for="phone" class="label-name"><span class="content-name">Номер телефона</span></label>
+                      </div>
+                    </div>
+                    <div class="form__group">
+                      <div class="_form">
+                        <input type="text" class="input" name="adress" autocomplete="off" required>
+                        <label for="adress" class="label-name"><span class="content-name">Адрес</span></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__bottom">
+                    <div class="_form">
+                      <input type="text" class="textarea" name="about" autocomplete="off" required>
+                      <label for="about" class="label-name"><span class="content-name">О себе</span></label>
+                    </div>
+                  </div>
+                  <button type="submit" class="form__btn btn">Отправить</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end modal for form -->
+    <!-- modal for products -->
+    
+    <!--end modal for products -->
+  </div>
+</body>
+<script src="js/libs/jquery-3.4.1.min.js"></script>
+<script src="js/libs/swiper-bundle.min.js"></script>
+<script src="js/libs/jquery.nice-number.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+
+  // =======================================================================================================
+
+  // forms
+  let modalForms = document.getElementById('modal-form');
+  let modalFormBtn = document.querySelectorAll('[data-modal-job-btn]');
+  let closeBtnForm = document.querySelectorAll('[data-close-form]');
+  window.addEventListener('click', outsideForm)
+
+  function outsideForm(e) {
+    if (e.target == modalForms) {
+      modalForms.classList.remove('_active')
+    }
+  }
+
+  modalFormBtn.forEach(button => {
+    button.addEventListener('click', () => {
+      const modalForm = document.querySelector('.modal-form')
+      openModal(modalForm)
+    })
+  });
+  function openModal(modalForm) {
+    if (modalForm == null) return
+    modalForm.classList.add('_active')
+  }
+  closeBtnForm.forEach(button => {
+    button.addEventListener('click', () => {
+      const modalFormClose = button.closest('.modal')
+      closeModal(modalFormClose)
+    })
+  })
+  function closeModal(modalFormClose) {
+    if (modalFormClose == null) return
+    modalFormClose.classList.remove('_active')
+  }
+
+</script>
+<script>
+  let _modal = document.getElementById('modal-branch');
+  let modalBranchBtn = document.getElementById('modalBranchBtn');
+  let closeBtn = document.getElementsByClassName('close-btn')[0];
+
+  modalBranchBtn.addEventListener('click', openBranchModal);
+  closeBtn.addEventListener('click', closeBranchModal);
+  window.addEventListener('click', clickOutside)
+  //cart----
+  let modalOverlay = document.querySelector('.product-v-modal-overlay');
+  let modalCartBtn = document.getElementById('modalCartBtn');
+  let closeBtnCart = document.getElementsByClassName('product-v-modal-close')[0];
+  // =======================================================================================================
+
+  // =======================================================================================================
+  modalCartBtn.addEventListener('click', openCartModal);
+  closeBtnCart.addEventListener('click', closeCartModal);
+  window.addEventListener('click', clickOutsideCart)
+
+  // job----
+  let modalJob = document.getElementById('modal-job');
+  let modalJobBtn = document.getElementById('modalJobBtn');
+  let closeBtnJob = document.getElementsByClassName('close-btn-job')[0];
+
+  modalJobBtn.addEventListener('click', openJobModal);
+  closeBtnJob.addEventListener('click', closeJobModal);
+  window.addEventListener('click', clickOutsideJob)
+
+
+  ///
+  // branch
+  function openBranchModal() {
+    _modal.style.display = 'block';
+  }
+  function closeBranchModal() {
+    _modal.style.display = 'none';
+  }
+  function clickOutside(e) {
+    if (e.target == _modal) {
+      _modal.style.display = 'none';
+    }
+  };
+  //cart----
+  function openCartModal() {
+    modalOverlay.classList.add('_active')
+  }
+  function closeCartModal() {
+    modalOverlay.classList.remove('_active')
+  }
+  function clickOutsideCart(e) {
+    if (e.target == modalOverlay) {
+      modalOverlay.classList.remove('_active')
+    }
+  };
+  //jobs---
+  function openJobModal() {
+    modalJob.style.display = 'block'
+  }
+  function closeJobModal() {
+    modalJob.style.display = 'none';
+
+  }
+  function clickOutsideJob(e) {
+    if (e.target == modalJob) {
+      modalJob.style.display = 'none';
+    }
+  };
+
+</script>
+<script>
+$(document).on("click", ".item-v-modal__type", function () {
+  $(this).addClass("_active").siblings().removeClass("_active");
+});
+$(document).on("click", ".item-v-modal__dough", function () {
+  $(this).addClass("_active").siblings().removeClass("_active");
+});
+document.documentElement.addEventListener("click", function (e) {
+  if (!e.target.closest(".v-modal-info__image")) {
+    let one = document.querySelector(".v-modal-info__content");
+    one.classList.remove("_active");
+  }
+});
+</script>
+</html>

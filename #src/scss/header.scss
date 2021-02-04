@@ -1,0 +1,321 @@
+.header {
+  position: relative;
+  // top: 0;
+  // left: 0;
+  height: 120px;
+  width: 100%;
+  background: #fff;
+  z-index: 5;
+  @include flexbox();
+  align-items: flex-end;
+  @media (max-width: $md2+px){
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 1px 1px #aaa8d0b3, 1px 0px 1px #AAA8D0;
+  }
+  &.sticky{
+    @media (min-width: $md2+px){
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      animation: fadeInDown 1s both .2s;
+      height: 64px;
+      box-shadow: 0px 1px 1px #aaa8d0b3, 1px 0px 1px #AAA8D0;
+      .header__top{
+        @media (min-width: $md3+px){
+          @include tr(0,-100%,0);
+          opacity: 0;
+          visibility: hidden;
+  
+        }
+      }
+      .header__column_first{
+        @media (min-width: $md3+px){
+          display: block;
+        }
+      }
+      .header__logo{
+        margin-bottom: 10px;
+        @media (max-width: $md3+px){
+          margin-bottom: 12px;
+        }
+      }
+      .header__cart{
+        margin-bottom: 12px;
+      }
+    }
+  }
+  // .header__container
+  &__container {
+  }
+  // .header__top
+  &__top {
+    @include flexbox();
+    justify-content: space-between;
+    margin-bottom: -12px;
+    @include anim(.3s, 0s);
+    @media (max-width: $md2+px){
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+    // background: #ccc;
+  }
+  // .header__main
+  &__main {
+    @include flexbox();
+    justify-content: space-between;
+    align-items: center;
+    // background: #f1f1f3;
+  }
+  // .header__column
+  &__column {
+    &_first{
+      display: none;
+    }
+  }
+  // .header__nav
+  &__nav {
+    margin-top: 15px;
+    @media (max-width: $md2+px){
+      margin-top: 0;
+    }
+  }
+  &__logo{
+    width: 165px;
+    height: 33px;
+    position: relative;
+    z-index: 2;
+    display: block;
+    @media (max-width: $md2+px){
+      width: 120px;
+    }
+    img{
+      width: 100%;
+    }
+  }
+  // .header__cart
+  &__cart {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 15px;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 25px;
+      @include tr(0,-50%,0);
+      width: 27px;
+      height: 22px;
+      background: url('../img/cart.svg') left no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.top-header {
+
+  // .top-header__column
+  &__column {
+  }
+ 
+  // .top-header__actions
+  &__actions {
+    margin-right: 208px;
+    @include anim(.3s, 0s);
+    p{
+      line-height: 17px;
+      color: #808080;
+      margin-bottom: 5px; 
+      &:last-child{
+        text-align: right;
+        margin-bottom: 0;
+      }
+    }
+    @media (max-width: $md2+px){
+      margin-right: 0;
+      margin-top: 5px;
+      max-width: 140px;
+    }
+  }
+  // .top-header__phone
+  &__phone {
+    font-weight: bold;
+    line-height: 17px;
+    margin-bottom: 3px;
+    display: block;
+    color: #2b2b2b;
+  }
+}
+.menu {
+  @media (max-width: $md2+px){
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    @include tr(-100%,0,0);
+    @include anim(.25s, 0s);
+    overflow: auto;
+    &._active{
+      @include tr(0,0,0);
+    }
+  }
+  // .menu__list
+  &__list {
+    @include flexbox();
+    @media (max-width: $md2+px){
+      display: block;
+      margin-top: 80px;
+      li{
+        margin-left: 0;
+      }
+    }
+    li{
+      margin-left: 30px;
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+  // .menu__link
+  &__link {
+    font-weight: bold;
+    line-height: 17px;
+    color: #2b2b2b;
+    position: relative;
+    white-space: nowrap;
+    @include anim(.3s, 0s);
+    &.branch,&.job{
+      outline: none;
+      background: transparent;
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: $color2;
+      @include anim(.3s, 0s);
+      z-index: 3;
+    }
+    &:hover{
+      &::before{
+        width: 100%;
+      }
+    }
+    &._active{
+      @include anim(.3s, 0s);
+      &::before{
+        width: 100%;
+      }
+    }
+    @media (max-width: $md2+px){
+      font-size: 24px;
+      line-height: 33px;
+      margin-bottom: 8px;
+      display: inline-block;
+      font-family: $fontfamily2;
+      &::before{
+        top: 31px;
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        top: 31px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $color1;
+        @include anim(.3s, 0s);
+      }
+    } 
+  }
+}
+// .cart-count{
+//   position: absolute;
+//   left: 12px;
+//   top: -12px;
+//   width: 25px;
+//   height: 25px;
+//   border-radius: 50%;
+//   background: rgb(184, 178, 178);
+//   @include flexbox();
+//   justify-content: center;
+//   align-items: center;
+//   display: none;
+// }
+
+// =======================================================================================================
+.menu__icon {
+  display: none;
+  flex: 0 0 30px;
+  width: 23px;
+  height: 30px;
+  position: absolute;
+  cursor: pointer;
+  padding: 6px 0px;
+  z-index: 5;
+  right: 15px;
+  top: 14px;
+  background-color: transparent;
+  border-radius: 4px;
+  @include anim(.3s, 0s);
+  z-index: 5;
+  @media (max-width: $md2+px) {
+    display: block;
+  }
+}
+
+.icon-menu__lines {
+  // height: 21px;
+  height: 16px;
+  width: 30px;
+  position: relative;
+}
+
+.menu__icon span {
+  transition: all 0.3s ease 0s;
+  top: calc(50% - 1.5px);
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  // width: 26px;
+  width: 16px;
+  // height: 3px;
+  height: 2px;
+  border-radius: 5px;
+  background: #2b2b2b;
+  
+}
+
+.menu__icon span:first-child {
+  top: 0;
+}
+
+.menu__icon span:last-child {
+  top: auto;
+  bottom: 0;
+}
+
+.menu__icon._active span {
+  transform: scale(0);
+}
+
+.menu__icon._active span:first-child {
+  transform: rotate(-45deg);
+  top: calc(50% - 1px);
+}
+
+.menu__icon._active span:last-child {
+  transform: rotate(45deg);
+  bottom: calc(50% - 1px);
+}
